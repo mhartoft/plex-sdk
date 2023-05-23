@@ -35,4 +35,12 @@ export class Library {
 
         return this.apiClient.get(`library/metadata/${ids.join(',')}`)
     }
+
+    languageOverride (itemKey: string, language: string): Promise<void> {
+        return this.apiClient.put(`/library/metadata/${itemKey}/prefs?languageOverride=${language}`)
+    }
+
+    refresh (id: string): Promise<void> {
+        return this.apiClient.put(`library/metadata/${id}/refresh?force=1`)
+    }
 }

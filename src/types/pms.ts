@@ -210,6 +210,12 @@ export interface Metadata {
         }[];
     }[];
     Guid?: Guid[]
+    languageOverride?: string;
+    Country?: { tag: string }[]
+    Location?: { path: string }[]
+    librarySectionID?: number
+    contentRating?: string
+    Genre?: { tag: string }[]
 }
 
 export interface MetadataMediaContainer extends MediaContainer {
